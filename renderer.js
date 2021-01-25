@@ -5,8 +5,9 @@
 // selectively enable features needed in the rendering
 // process.
 
-document.getElementById('dirs').addEventListener('click', () => {
+document.getElementById('dirs').addEventListener('click', (evt) => {
+  evt.preventDefault()
   window.postMessage({
-    type: 'select-dirs'
+    type: 'select-dirs',
   })
 })
