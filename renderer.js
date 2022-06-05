@@ -11,3 +11,7 @@ document.getElementById('dirs').addEventListener('click', (evt) => {
     type: 'select-dirs',
   })
 })
+
+window.addEventListener('select-dirs-response', evt => {
+  alert(evt.data);
+});
