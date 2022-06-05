@@ -12,6 +12,13 @@ document.getElementById('dirs').addEventListener('click', (evt) => {
   })
 })
 
+document.getElementById('dirs-handle').addEventListener('click', (evt) => {
+  evt.preventDefault()
+  window.postMessage({
+    type: 'select-dirs-handle',
+  })
+})
+
 window.addEventListener('select-dirs-response', evt => {
   alert(evt.data);
 });

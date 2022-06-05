@@ -63,3 +63,12 @@ ipcMain.on('select-dirs', async (event, arg) => {
   console.log('sending');
   event.sender.send('select-dirs-response', result.filePaths);
 })
+
+
+ipcMain.handle('select-dirs-handle', async (event, ...args) => {
+  const result = await dialog.showOpenDialog(mainWindow, {
+    properties: ['openDirectory']
+  })
+  console.log('directories handled', result.filePaths)
+  return result.filePaths
+})
